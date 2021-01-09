@@ -10,11 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_01_09_172830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "sf_id"
+    t.string "shop_dealer"
+    t.string "name"
+    t.string "street"
+    t.string "city"
+    t.string "zip"
+    t.string "country"
+    t.string "state"
+    t.string "phone"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
