@@ -13,6 +13,7 @@
 !/log/.keep
 !/tmp/.keep
 .vscode/
+vendor/*
 
 .byebug_history
 
