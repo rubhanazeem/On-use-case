@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_09_172830) do
+ActiveRecord::Schema.define(version: 2021_01_09_193506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
@@ -18,19 +18,20 @@ ActiveRecord::Schema.define(version: 2021_01_09_172830) do
   enable_extension "uuid-ossp"
 
   create_table "accounts", force: :cascade do |t|
-    t.string "sf_id"
-    t.string "shop_dealer"
-    t.string "name"
-    t.string "street"
-    t.string "city"
-    t.string "zip"
-    t.string "country"
-    t.string "state"
-    t.string "phone"
-    t.float "latitude"
-    t.float "longitude"
+    t.string "Id"
+    t.string "E_Shop_Dealer__c"
+    t.string "Name"
+    t.string "POS_Street__c"
+    t.string "POS_City__c"
+    t.string "POS_ZIP__c"
+    t.string "POS_Country__c"
+    t.string "POS_State__c"
+    t.string "POS_Phone__c"
+    t.float "Dealer_Latitude__c"
+    t.float "Dealer_Longitude__c"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["Id"], name: "index_accounts_on_Id"
   end
 
 end
