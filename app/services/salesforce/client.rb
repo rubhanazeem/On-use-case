@@ -16,7 +16,7 @@ module Salesforce
 
     def get_all_accounts
       client.query(
-        "select #{ATTRS} from Account where E_Shop_Dealer__c = 'Dealer and Point of Sale'"
+        "select #{ATTRS.join(',')} from Account where E_Shop_Dealer__c = 'Dealer and Point of Sale'"
       )
     end
 
