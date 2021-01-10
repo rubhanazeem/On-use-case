@@ -1,6 +1,6 @@
-class CreateAccounts < ActiveRecord::Migration[6.1]
+class CreateRetailers < ActiveRecord::Migration[6.1]
   def change
-    create_table :accounts do |t|
+    create_table :retailers do |t|
       t.string :Id
       t.string :E_Shop_Dealer__c
       t.string :Name
@@ -15,6 +15,6 @@ class CreateAccounts < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    add_index :accounts, :Id
+    add_index :retailers, :Id
   end
 end

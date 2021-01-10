@@ -3,6 +3,7 @@
 module Salesforce
   class Client
     ENDPOINT = 'test.salesforce.com'
+    DEALER_IDENTIFIER = 'Dealer and Point of Sale'
     ATTRS    = %w[Id E_Shop_Dealer__c Name POS_Street__c POS_City__c
                   POS_ZIP__c POS_Country__c POS_State__c POS_Phone__c
                   Dealer_Latitude__c Dealer_Longitude__c
@@ -16,7 +17,7 @@ module Salesforce
 
     def get_all_accounts
       client.query(
-        "select #{ATTRS.join(',')} from Account where E_Shop_Dealer__c = 'Dealer and Point of Sale'"
+        "select #{ATTRS.join(',')} from Account where E_Shop_Dealer__c = '#{DEALER_IDENTIFIER}'"
       )
     end
 

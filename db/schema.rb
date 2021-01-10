@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_01_09_193506) do
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "accounts", force: :cascade do |t|
+  create_table "retailers", force: :cascade do |t|
     t.string "Id"
     t.string "E_Shop_Dealer__c"
     t.string "Name"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_01_09_193506) do
     t.float "Dealer_Longitude__c"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["Id"], name: "index_accounts_on_Id"
+    t.index ["Id"], name: "index_retailers_on_Id"
   end
 
 end
