@@ -1,24 +1,17 @@
-# README
+Import all relevant retailers/dealers from Salesforce into a local database
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```ruby
+bundle exec rake salesforce:import_all_accounts
+```
 
-Things you may want to cover:
+Synchronize all retailers
 
-* Ruby version
+```ruby
+bundle exec rake salesforce:sync_retailers
+```
 
-* System dependencies
+Access
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```sh
+http://localhost:3000/v1/retailers
+```
