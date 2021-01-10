@@ -20,10 +20,10 @@ namespace :salesforce do
     ids = client.get_updated('Account', start_time, end_time).ids
     ids = ids - Account.pluck(:Id)
     ids.each do |id|
-      account = client.find('Account', id)
+      account = client.select('Account', id, Salesforce::Client::ATTRS)
       retailer = account.E_Shop_Dealer__c == 'Dealer and Point of Sale'
       updated_accounts << account.attrs if retailer
     end
-    Account.create(updated_accounts) if updated_accounts.present?
+    Account.create!(updated_accounts) if updated_accounts.present?
   end
 end

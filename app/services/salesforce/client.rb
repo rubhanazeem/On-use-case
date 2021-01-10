@@ -3,19 +3,20 @@
 module Salesforce
   class Client
     ENDPOINT = 'test.salesforce.com'
+    ATTRS    = %w[Id E_Shop_Dealer__c Name POS_Street__c POS_City__c
+                  POS_ZIP__c POS_Country__c POS_State__c POS_Phone__c
+                  Dealer_Latitude__c Dealer_Longitude__c
+    ]
 
     attr_reader :client
 
     def initialize
-      @client       = authenticate!
+      @client = authenticate!
     end
 
     def get_all_accounts
-      attrs = 'Id, E_Shop_Dealer__c, Name, POS_Street__c, POS_City__c,'\
-              'POS_ZIP__c, POS_Country__c, POS_State__c, POS_Phone__c,' \
-              'Dealer_Latitude__c, Dealer_Longitude__c, CreatedDate'
       client.query(
-        "select #{attrs} from Account where E_Shop_Dealer__c = 'Dealer and Point of Sale'"
+        "select #{ATTRS} from Account where E_Shop_Dealer__c = 'Dealer and Point of Sale'"
       )
     end
 
